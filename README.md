@@ -57,6 +57,36 @@ You can instantly deploy it to **Vercel** with just one click and have your own 
 
 </div>
 
+## Database Setup
+
+### Populate Exercises Database
+
+To fill your Supabase `exercises` table with data from the JSON file:
+
+1. **Configure Supabase connection**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Supabase credentials
+   ```
+
+2. **Run the population script**
+   ```bash
+   npm run populate-exercises
+   ```
+
+3. **Activate basic exercises (optional)**
+   ```bash
+   npm run activate-basics
+   ```
+
+### How it works
+
+- **populate-exercises**: Imports all 1500+ exercises from JSON into database
+- **activate-basics**: Automatically activates common exercises to get started
+- All exercises start as `is_active = false`
+- GIF paths are mapped to `gifs/{exerciseId}.gif` in your Supabase bucket
+- You can manually activate/deactivate exercises in Supabase dashboard
+
 ## 🔗 Useful Links
 
 <div align="left">
@@ -197,4 +227,4 @@ You can instantly deploy it to **Vercel** with just one click and have your own 
 
 ---
 
-<em>💪 Now that you’ve bench pressed through the sample… go lift the rest of the v2 dataset like a champ! 😄<em>
+<em>💪 Now that you've bench pressed through the sample… go lift the rest of the v2 dataset like a champ! 😄<em>
